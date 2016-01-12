@@ -1,6 +1,6 @@
 from jujubigdata.utils import DistConfig
-from charms.layer import LayerOptions
+from charms import layer
 
 
 def get_dist_config():
-    return DistConfig(data=LayerOptions('hadoop-client'))
+    return DistConfig(data=layer.options('hadoop-client'))
