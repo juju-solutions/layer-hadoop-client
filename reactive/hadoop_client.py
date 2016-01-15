@@ -3,8 +3,8 @@ from charms.reactive import when, when_not
 from charmhelpers.core import hookenv
 
 
-@when('hadoop.related', 'hadoop.installed')
-def report_ready():
+@when('hadoop.installed')
+def report_ready(hadoop):
     hookenv.status_set('active', 'Ready')
 
 
@@ -15,5 +15,5 @@ def report_blocked():
 
 @when('hadoop.related')
 @when_not('hadoop.installed')
-def report_waiting():
+def report_waiting(hadoop):
     hookenv.status_set('waiting', 'Waiting for Plugin to become ready')
