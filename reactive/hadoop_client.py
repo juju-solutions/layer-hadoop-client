@@ -5,7 +5,7 @@ from charmhelpers.core import hookenv
 
 @when('hadoop.installed')
 def report_ready(hadoop):
-    hookenv.status_set('active', 'Ready')
+    hookenv.log("Hadoop client is installed")
 
 
 @when_not('hadoop.related')
