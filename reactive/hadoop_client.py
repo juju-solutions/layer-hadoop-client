@@ -3,9 +3,11 @@ from charms.reactive import when, when_not
 from charmhelpers.core import hookenv
 
 
-@when('hadoop.installed')
-def report_ready(hadoop):
-    hookenv.status_set('active', 'Ready')
+if hookenv.metadata()['name'] == 'hadoop-client':
+    # only report Ready status if deployed as standalone client, not as base layer
+    @when('hadoop.installed')
+    def report_ready(hadoop):
+        hookenv.status_set('active', 'Ready')
 
 
 @when_not('hadoop.related')
