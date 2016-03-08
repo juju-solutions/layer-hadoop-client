@@ -4,7 +4,8 @@ from charmhelpers.core import hookenv
 
 
 if hookenv.metadata()['name'] == 'hadoop-client':
-    # only report Ready status if deployed as standalone client, not as base layer
+    # only report Ready status if deployed as standalone client,
+    # not if used as a base layer
     @when('hadoop.installed')
     def report_ready(hadoop):
         hookenv.status_set('active', 'Ready')
