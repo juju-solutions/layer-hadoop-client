@@ -11,12 +11,12 @@ if hookenv.metadata()['name'] == 'hadoop-client':
         hookenv.status_set('active', 'Ready')
 
 
-@when_not('hadoop.related')
+@when_not('hadoop.joined')
 def report_blocked():
     hookenv.status_set('blocked', 'Waiting for relation to Hadoop Plugin')
 
 
-@when('hadoop.related')
+@when('hadoop.joined')
 @when_not('hadoop.installed')
 def report_waiting(hadoop):
     hookenv.status_set('waiting', 'Waiting for Plugin to become ready')
