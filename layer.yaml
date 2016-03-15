@@ -1,3 +1,4 @@
+repo: git@github.com:juju-solutions/layer-hadoop-client.git
 includes: ['layer:basic', 'interface:hadoop-plugin']
 defines:
   packages:
