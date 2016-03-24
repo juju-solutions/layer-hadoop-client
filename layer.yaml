@@ -65,3 +65,9 @@ defines:
           port: {type: integer}
           exposed_on: {type: string}
     default: {}
+  silent:
+    description: >
+      When set to true this layer will not change the status messages of the
+      charm. State are not affected.
+    type: boolean
+    default: false
