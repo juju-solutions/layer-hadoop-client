@@ -1,5 +1,5 @@
 # pylint: disable=unused-argument
-from charms.reactive import when, when_not
+from charms.reactive import when, when_not, when_not_all, is_state
 from charmhelpers.core import hookenv
 from charms import layer
 
@@ -12,11 +12,22 @@ if hookenv.metadata()['name'] == 'hadoop-client':
         hookenv.status_set('active', 'Ready')
 
 
-@when_not('hadoop.joined')
+@when_not_all('hadoop.joined', 'java.ready')
 def report_blocked():
     cfg = layer.options('hadoop-client')
     if not cfg.get('silent'):
-        hookenv.status_set('blocked', 'Waiting for relation to Hadoop Plugin')
+        missing = []
+        if not is_state('hadoop.joined'):
+            missing.append('relation to Hadoop Plugin')
+        if not is_state('java.ready'):
+            missing.append('Java')
+        missing = ' & '.join(missing)
+        hookenv.status_set('blocked', 'Waiting for {}'.format(missing))
+
+
+@when('hadoop.joined', 'java.ready')
+def proxy_java(hadoop, java):
+    hadoop.set_java_info(java.java_home(), java.java_version())
 
 
 @when('hadoop.joined')
