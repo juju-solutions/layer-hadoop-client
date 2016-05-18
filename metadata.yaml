@@ -12,3 +12,7 @@ tags: ["bigdata", "hadoop"]
 provides:
   hadoop:
     interface: hadoop-plugin
+    scope: container
+  java:
+    interface: java
+    scope: container
