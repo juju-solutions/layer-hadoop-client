@@ -13,6 +13,9 @@ provides:
   hadoop:
     interface: hadoop-plugin
     scope: container
+  mahout:
+    interface: mahout
+    scope: container
   java:
     interface: java
     scope: container
