@@ -19,4 +19,3 @@ provides:
   mahout:
     interface: mahout
     scope: container
-series: ["trusty", "xenial"]
