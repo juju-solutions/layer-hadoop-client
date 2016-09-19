@@ -1,7 +1,7 @@
 # Overview
 
-This is the base layer for charms that wish to connect to the core
-[Apache Hadoop cluster][hadoop-core].  [Including this layer][building]
+This is the base layer for charms that wish to connect to a core
+[Hadoop cluster][hadoop-core].  [Including this layer][building]
 provides and manages the relation to [hadoop-plugin][], and all your reactive
 charm needs to do is respond to one or more of the states listed below.
 
@@ -105,7 +105,7 @@ options:
 This layer currently does not define any actions.
 
 
-[hadoop-core]: https://jujucharms.com/apache-core-batch-processing/
+[hadoop-core]: https://jujucharms.com/hadoop-processing/
 [building]: https://jujucharms.com/docs/devel/authors-charm-building
 [interfaces.juju.solutions]: http://interfaces.juju.solutions/
 [non-python]: https://pythonhosted.org/charms.reactive/#non-python-reactive-handlers
