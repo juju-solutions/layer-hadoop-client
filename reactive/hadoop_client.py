@@ -1,37 +1,27 @@
 # pylint: disable=unused-argument
 from charms.reactive import when, when_not
 from charmhelpers.core import hookenv
-from charms import layer
 
 
 if hookenv.metadata()['name'] == 'hadoop-client':
-    # only report Ready status if deployed as standalone client,
+    # only report status if deployed as standalone client,
     # not if used as a base layer
     @when('hadoop.installed')
     def report_ready(hadoop):
         hookenv.status_set('active', 'ready')
 
-
-@when_not('hadoop.joined')
-def report_blocked():
-    cfg = layer.options('hadoop-client')
-    if not cfg.get('silent'):
+    @when_not('hadoop.joined')
+    def report_blocked():
         hookenv.status_set('blocked', 'waiting for relation to hadoop plugin')
 
-
-@when('hadoop.joined')
-@when_not('hadoop.installed')
-def report_waiting_for_hadoop(hadoop):
-    cfg = layer.options('hadoop-client')
-    if not cfg.get('silent'):
+    @when('hadoop.joined')
+    @when_not('hadoop.installed')
+    def report_waiting_for_hadoop(hadoop):
         hookenv.status_set('waiting', 'waiting for plugin to become ready')
 
-
-@when('java.connected')
-@when_not('java.ready')
-def report_waiting_for_java(hadoop):
-    cfg = layer.options('hadoop-client')
-    if not cfg.get('silent'):
+    @when('java.connected')
+    @when_not('java.ready')
+    def report_waiting_for_java(hadoop):
         hookenv.status_set('waiting', 'waiting for java to become ready')
 
 
