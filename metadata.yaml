@@ -10,6 +10,9 @@ description: |
   a base layer for other client charms, such as Gobblin or Spark.
 tags: ["bigdata", "hadoop"]
 provides:
+  giraph:
+    interface: giraph
+    scope: container
   hadoop:
     interface: hadoop-plugin
     scope: container
