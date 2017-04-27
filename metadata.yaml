@@ -1,14 +1,14 @@
 name: hadoop-client
 summary: Client charm for Apache Hadoop platform
 maintainer: Juju Big Data <bigdata@lists.ubuntu.com>
-description: |
-  Hadoop is a software platform that lets one easily write and
-  run applications that process vast amounts of data.
+description: >
+  Hadoop is a software platform that lets one easily write and run applications
+  that process vast amounts of data.
 
-  This charm manages a dedicated client node as a place to
-  run mapreduce jobs.  However, its main purpose is to serve as
-  a base layer for other client charms, such as Gobblin or Spark.
-tags: ["bigdata", "hadoop"]
+  This charm manages a dedicated client node as a place to run Hadoop-related
+  jobs.  However, its main purpose is to serve as a base layer for other client
+  charms, such as Spark or Zeppelin.
+tags: ["big_data", "hadoop"]
 provides:
   giraph:
     interface: giraph

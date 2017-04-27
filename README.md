@@ -1,11 +1,13 @@
 # Overview
 
 This is the base layer for charms that wish to connect to a core
-[Hadoop cluster][hadoop-core].  [Including this layer][building]
-provides and manages the relation to [hadoop-plugin][], and all your reactive
-charm needs to do is respond to one or more of the states listed below.
+[Hadoop cluster][hadoop-core].
 
-The plugin services provides the appropriate Hadoop libraries for the cluster,
+[Including this layer][building] provides and manages the relation to
+[hadoop-plugin][]. All your reactive charm needs to do is respond to one
+or more of the states listed below.
+
+The plugin charm provides the appropriate Hadoop libraries for the cluster,
 and sets up the standard Hadoop config files in `/etc/hadoop/conf`.
 
 
@@ -19,8 +21,8 @@ a `layer.yaml` file:
 This will fetch this layer from [interfaces.juju.solutions][] and incorporate
 it into your charm layer.  You can then add handlers under the `reactive/`
 directory.  Note that **any** file under `reactive/` will be expected to
-contain handlers, whether as Python decorated functions or [executables][non-python]
-using the [external handler protocol][].
+contain handlers, whether as Python decorated functions or
+[executables][non-python] using the [external handler protocol][].
 
 
 # Reactive States
