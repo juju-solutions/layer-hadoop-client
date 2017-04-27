@@ -9,6 +9,7 @@ description: >
   jobs.  However, its main purpose is to serve as a base layer for other client
   charms, such as Spark or Zeppelin.
 tags: ["big_data", "hadoop"]
+series: ['xenial']
 provides:
   giraph:
     interface: giraph
