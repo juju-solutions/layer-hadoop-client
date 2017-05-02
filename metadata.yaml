@@ -1,5 +1,5 @@
 name: hadoop-client
-summary: Client charm for Apache Hadoop platform
+summary: Client charm for Apache Hadoop
 maintainer: Juju Big Data <bigdata@lists.ubuntu.com>
 description: >
   Hadoop is a software platform that lets one easily write and run applications

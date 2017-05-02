@@ -102,9 +102,8 @@ An example `layer.yaml` using these options might be:
 - <bigdata@lists.ubuntu.com>
 
 [hadoop-core]: https://jujucharms.com/hadoop-processing/
-[building]: https://jujucharms.com/docs/devel/authors-charm-building
+[building]: https://jujucharms.com/docs/stable/authors-charm-building
+[hadoop-plugin]: https://github.com/juju-solutions/interface-hadoop-plugin
 [interfaces.juju.solutions]: http://interfaces.juju.solutions/
 [non-python]: https://pythonhosted.org/charms.reactive/#non-python-reactive-handlers
 [external handler protocol]: https://pythonhosted.org/charms.reactive/charms.reactive.bus.html#charms.reactive.bus.ExternalHandler
-[`data_changed`]: https://pythonhosted.org/charms.reactive/charms.reactive.helpers.html#charms.reactive.helpers.data_changed
-[hadoop-plugin]: https://github.com/juju-solutions/interface-hadoop-plugin
