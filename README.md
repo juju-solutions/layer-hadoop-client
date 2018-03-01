@@ -101,6 +101,16 @@ An example `layer.yaml` using these options might be:
 
 - <bigdata@lists.ubuntu.com>
 
+
+# Resources
+
+- [Apache Bigtop home page](http://bigtop.apache.org/)
+- [Apache Bigtop issue tracking](http://bigtop.apache.org/issue-tracking.html)
+- [Apache Bigtop mailing lists](http://bigtop.apache.org/mail-lists.html)
+- [Juju Big Data](https://jujucharms.com/big-data)
+- [Juju Bigtop charms](https://jujucharms.com/q/bigtop)
+- [Juju mailing list](https://lists.ubuntu.com/mailman/listinfo/juju)
+
 [hadoop-core]: https://jujucharms.com/hadoop-processing/
 [building]: https://jujucharms.com/docs/stable/authors-charm-building
 [hadoop-plugin]: https://github.com/juju-solutions/interface-hadoop-plugin
